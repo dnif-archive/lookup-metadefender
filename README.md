@@ -52,6 +52,8 @@ The Lookup call returns output in the following structure for available data
 Report on the reputation of the IP Adress 
 - input : an IPv4/IPv6 address
 
+The Lookup call returns output in the following structure for available data
+
 | Field                           | Description                                                                  |
 |---------------------------------|------------------------------------------------------------------------------|
 | $MDSuccess                      | Boolean value representing whether request was successfully resolved or not. |
@@ -76,6 +78,8 @@ The report also includes variable fields depending on the positive detections. F
 Report on the CVEs present for an application
 - input : SHA1 hash of the application
 
+The Lookup call returns output in the following structure for available data
+
 | Field                           | Description                                                                  |
 |---------------------------------|------------------------------------------------------------------------------|
 | $MDSuccess                      | Boolean value representing whether request was successfully resolved or not. |
@@ -85,6 +89,8 @@ Report on the CVEs present for an application
 
 Report on the particulars of the provided CVE
 - input : CVE identifier
+
+The Lookup call returns output in the following structure for available data
 
 | Field                           | Description                                                                                                                 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -142,6 +148,8 @@ Report on the particulars of the provided CVE
 Report the hashes associated with the CVE
 - input : CVE identifier
 
+The Lookup call returns output in the following structure for available data
+
 | Field                           | Description                                                                                                                 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | $MDSuccess                      | Boolean value representing wheter request was succesfully resolved or not.                                                  |
@@ -191,6 +199,8 @@ Report the hashes associated with the CVE
 
 Report on the vendor details of the softwares affected by the CVE
 - input : CVE identifier
+
+The Lookup call returns output in the following structure for available data
 
 | Field                           | Description                                                                                                                 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
@@ -244,6 +254,8 @@ Report on the vendor details of the softwares affected by the CVE
 Report on the products affected by the CVE
 - input : CVE identifier
 
+The Lookup call returns output in the following structure for available data
+
 | Field                           | Description                                                                                                                 |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
 | $MDSuccess                      | Boolean value representing wheter request was succesfully resolved or not.                                                  |
@@ -292,15 +304,15 @@ Report on the products affected by the CVE
 | $MDVulnerableSoftware           | Array of all the vulnerable softwares                                                                                       |
 
 ### Using the MetaDefender API and DNIF  
-The VirusTotal API is found on github at 
+The MetaDefender API is found on github at 
 
   https://github.com/dnif/lookup-metadefender
 
-#### Getting started with VirusTotal API and DNIF
+#### Getting started with MetaDefender API and DNIF
 
 1. #####    Login to your Data Store, Correlator, and A10 containers.  
    [ACCESS DNIF CONTAINER VIA SSH](https://dnif.it/docs/guides/tutorials/access-dnif-container-via-ssh.html)
-2. #####    Move to the ‘/dnif/<Deployment-key/lookup_plugins’ folder path.
+2. #####    Move to the ‘/dnif/<Deployment-key>/lookup_plugins’ folder path.
 ```
 $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 ```
@@ -308,7 +320,7 @@ $cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
 ```  
 git clone https://github.com/dnif/lookup-metadefender.git metadefender
 ```
-4. #####   Move to the ‘/dnif/<Deployment-key/lookup_plugins/metadefender/’ folder path and open dnifconfig.yml configuration file     
+4. #####   Move to the ‘/dnif/<Deployment-key>/lookup_plugins/metadefender/’ folder path and open dnifconfig.yml configuration file     
     
    Replace the tag: <Add_your_api_key_here> with your MetaDefender api key
 ```

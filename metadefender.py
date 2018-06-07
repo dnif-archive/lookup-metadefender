@@ -1,5 +1,4 @@
 import requests
-import pprint
 import os
 import yaml
 
@@ -732,7 +731,8 @@ def get_hash_report(inward_array, var_array):
             pass
 
         try:
-            i['$MDBlockReason'] = json_response['process_info']['blocked_reason']
+            if json_response['process_info']['blocked_reason'] != '':
+                i['$MDBlockReason'] = json_response['process_info']['blocked_reason']
             i['$MDProcessResult'] = json_response['process_info']['result']
         except Exception:
             pass
@@ -796,7 +796,8 @@ def get_hash_report(inward_array, var_array):
                 i['$MDPasswordProtectedDetection'] = pass_protected_results
             if potential_vul_results:
                 i['$MDPotentialVulnerableDetection'] = potential_vul_results
-            i['$MDDetectionTypes'] = list(detections)
+            if detections:
+                i['$MDDetectionTypes'] = list(detections)
             i['$MDFinalResult'] = json_response['scan_results']['scan_all_result_a']
             i['$MDFinalResultCode'] = json_response['scan_results']['scan_all_result_i']
         except Exception:
