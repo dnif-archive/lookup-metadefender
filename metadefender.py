@@ -5,7 +5,6 @@ import yaml
 
 path = os.environ["WORKDIR"]
 with open(path + "/lookup_plugins/metadefender/dnifconfig.yml", 'r') as ymlfile:
-with open("dnifconfig.yml") as ymlfile:
     cfg = yaml.load(ymlfile)
 
 
