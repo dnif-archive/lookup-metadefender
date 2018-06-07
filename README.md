@@ -7,7 +7,7 @@ Organizations can easily integrate MetaDefender threat intelligence data into th
 
 The Commercial version of MetaDefender threat intelligence feeds provides Access to hundreds of thousands of unique threats every day. The commercial version can be easily integrated into your existing DNIF Platform. 
 
-##### Lookups integrated with MetaDefender
+#### Lookups integrated with MetaDefender
 
 ##### Retrieve File Scan reports by MD5/SHA1/SHA256 Hash
 
@@ -22,7 +22,7 @@ The Lookup call returns output in the following structure for available data
 | $MDFileName                     | Name of the file associated with the hash                                                                                                                                                                 |
 | $MDFileType                     | Extension of the file                                                                                                                                                                                     |
 | $MDFileSize                     | Size of the file                                                                                                                                                                                          |
-| $MDFileCategory                 | Category for file type.<br>Possible values:<br>E - executables<br>D - documents<br>A - archives<br>G - graphical format<br>T - text<br>P - pdf format<br> - audio or video format<br>N - Android apk file |
+| $MDFileCategory                 | Category for file type.<br>Possible values:<br>E - executables<br>D - documents<br>A - archives<br>G - graphical format<br>T - text<br>P - pdf format<br>M - audio or video format<br>N - Android apk file |
 | $MDDescription                  | Description of the file scanned                                                                                                                                                                           |
 | $MDHashCodes                    | Provides the MD5, SHA1 and SHA256 hash codes of the file                                                                                                                                                  |
 | $MDUploadTimestamp              | The time the file was first uploaded.                                                                                                                                                                     |
