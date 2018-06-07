@@ -1,5 +1,7 @@
 ## MetaDefender
 
+https://metadefender.opswat.com/#!/
+
 ### Overview
 OPSWAT's Threat Intelligence Feeds provide a host of the most prevailing and widespread threats. OPSWAT offers the ability to leverage data collected from the MetaDefender Cloud community of users and customers. The goal is to make organizations more secure, and to give developers, IT administrators, and users alike the information and tools to make that possible.
 
@@ -288,3 +290,29 @@ Report on the products affected by the CVE
 | $MDSeverity                     | Level of importance of this known vulnerability (text)                                                                      |
 | $MDSeverityIndex                | Level of importance of this known vulnerability (index)                                                                     |
 | $MDVulnerableSoftware           | Array of all the vulnerable softwares                                                                                       |
+
+### Using the MetaDefender API and DNIF  
+The VirusTotal API is found on github at 
+
+  https://github.com/dnif/lookup-metadefender
+
+#### Getting started with VirusTotal API and DNIF
+
+1. #####    Login to your Data Store, Correlator, and A10 containers.  
+   [ACCESS DNIF CONTAINER VIA SSH](https://dnif.it/docs/guides/tutorials/access-dnif-container-via-ssh.html)
+2. #####    Move to the ‘/dnif/<Deployment-key/lookup_plugins’ folder path.
+```
+$cd /dnif/CnxxxxxxxxxxxxV8/lookup_plugins/
+```
+3. #####   Clone using the following command  
+```  
+git clone https://github.com/dnif/lookup-metadefender.git metadefender
+```
+4. #####   Move to the ‘/dnif/<Deployment-key/lookup_plugins/metadefender/’ folder path and open dnifconfig.yml configuration file     
+    
+   Replace the tag: <Add_your_api_key_here> with your MetaDefender api key
+```
+lookup_plugin:
+  MD_API_KEY: <Add_your_api_key_here>
+
+```
