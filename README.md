@@ -16,6 +16,11 @@ The Commercial version of MetaDefender threat intelligence feeds provides Access
 Report on scan results of MD5/SHA-1/SHA-256 hash provided
 - input : a md5/sha1/sha256 hash will retrieve the most recent report on a given sample
 
+```
+_fetch $Filehash from threatsample limit 1
+>>_lookup metadefender get_hash_report $Filehash
+```
+
 The Lookup call returns output in the following structure for available data
 
 |   Field                         |                                                                    Description                                                                                                                            |
@@ -52,6 +57,11 @@ The Lookup call returns output in the following structure for available data
 Report on the reputation of the IP Adress 
 - input : an IPv4/IPv6 address
 
+```
+_fetch $SrcIP from threatsample limit 1
+>>_lookup metadefender get_ip_report $SrcIP
+```
+
 The Lookup call returns output in the following structure for available data
 
 | Field                           | Description                                                                  |
@@ -78,6 +88,11 @@ The report also includes variable fields depending on the positive detections. F
 Report on the CVEs present for an application
 - input : SHA1 hash of the application
 
+```
+_fetch $Filehash from threatsample limit 1
+>>_lookup metadefender get_vulnerability $Filehash
+```
+
 The Lookup call returns output in the following structure for available data
 
 | Field                           | Description                                                                  |
@@ -89,6 +104,12 @@ The Lookup call returns output in the following structure for available data
 
 Report on the particulars of the provided CVE
 - input : CVE identifier
+
+```
+_fetch $CVE from threatsample limit 1
+>>_lookup metadefender get_cve $CVE
+```
+
 
 The Lookup call returns output in the following structure for available data
 
@@ -148,6 +169,12 @@ The Lookup call returns output in the following structure for available data
 Report the hashes associated with the CVE
 - input : CVE identifier
 
+```
+_fetch $CVE from threatsample limit 1
+>>_lookup metadefender get_cve_hashes $CVE
+```
+
+
 The Lookup call returns output in the following structure for available data
 
 | Field                           | Description                                                                                                                 |
@@ -199,6 +226,11 @@ The Lookup call returns output in the following structure for available data
 
 Report on the vendor details of the softwares affected by the CVE
 - input : CVE identifier
+
+```
+_fetch $CVE from threatsample limit 1
+>>_lookup metadefender get_cve_vendors $CVE
+```
 
 The Lookup call returns output in the following structure for available data
 
@@ -253,6 +285,11 @@ The Lookup call returns output in the following structure for available data
 
 Report on the products affected by the CVE
 - input : CVE identifier
+
+```
+_fetch $CVE from threatsample limit 1
+>>_lookup metadefender get_cve_products $CVE
+```
 
 The Lookup call returns output in the following structure for available data
 
