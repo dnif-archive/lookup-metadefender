@@ -16,6 +16,8 @@ The Commercial version of MetaDefender threat intelligence feeds provides Access
 Report on scan results of MD5/SHA-1/SHA-256 hash provided
 - input : a md5/sha1/sha256 hash will retrieve the most recent report on a given sample
 
+[Report for File Hash](https://drive.google.com/open?id=1N2Vizf5e_CGNyzwyOBacAhDi8WpVCMPG)
+
 ```
 _fetch $Filehash from threatsample limit 1
 >>_lookup metadefender get_hash_report $Filehash
@@ -57,6 +59,7 @@ The Lookup call returns output in the following structure for available data
 Report on the reputation of the IP Adress 
 - input : an IPv4/IPv6 address
 
+[Report for IP Address](https://drive.google.com/open?id=16jAvWbWzys0ynVMywyQVJIcZG1niVVZN)
 ```
 _fetch $SrcIP from threatsample limit 1
 >>_lookup metadefender get_ip_report $SrcIP
@@ -88,6 +91,9 @@ The report also includes variable fields depending on the positive detections. F
 Report on the CVEs present for an application
 - input : SHA1 hash of the application
 
+![get_vulnerability](https://user-images.githubusercontent.com/7484880/41231742-bc0e1324-6da1-11e8-8e6a-c34b9a56aacc.jpg)
+
+
 ```
 _fetch $Filehash from threatsample limit 1
 >>_lookup metadefender get_vulnerability $Filehash
@@ -105,6 +111,7 @@ The Lookup call returns output in the following structure for available data
 Report on the particulars of the provided CVE
 - input : CVE identifier
 
+[Report for CVE Information](https://drive.google.com/open?id=1NIIYPjfERCXxsnGfgd20Mwx6oo4ZmSs0)
 ```
 _fetch $CVE from threatsample limit 1
 >>_lookup metadefender get_cve $CVE
@@ -169,6 +176,8 @@ The Lookup call returns output in the following structure for available data
 Report the hashes associated with the CVE
 - input : CVE identifier
 
+[Report for CVE Hashes](https://drive.google.com/open?id=1hy4QyHvQn2KGqwYw_I_Dwn5scpQeJQo6)
+
 ```
 _fetch $CVE from threatsample limit 1
 >>_lookup metadefender get_cve_hashes $CVE
@@ -227,6 +236,7 @@ The Lookup call returns output in the following structure for available data
 Report on the vendor details of the softwares affected by the CVE
 - input : CVE identifier
 
+[Report for CVE Vendor](https://drive.google.com/open?id=1S-OWSbE706x4kFNGzeN0glCZrrVt3Qcx)
 ```
 _fetch $CVE from threatsample limit 1
 >>_lookup metadefender get_cve_vendors $CVE
@@ -286,6 +296,7 @@ The Lookup call returns output in the following structure for available data
 Report on the products affected by the CVE
 - input : CVE identifier
 
+[Report for Product Details](https://drive.google.com/open?id=1E4_oMEoqhUSMalpYE0gpttuWkUrFxY70)
 ```
 _fetch $CVE from threatsample limit 1
 >>_lookup metadefender get_cve_products $CVE
